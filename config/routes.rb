@@ -8,4 +8,7 @@ Rails.application.routes.draw do
   end
 
   root '/', controller: 'main', action: 'index'
+
+  # React Router handles routing for non-API routes
+  get '*path', to: 'main#index'
 end

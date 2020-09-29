@@ -5,18 +5,21 @@ import PropTypes from 'prop-types'
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 import ShowItem from './ShowItem'
+import IndexItems from './IndexItems'
 
 const App = props => {
   return (
     <Router>
       <div className="App">
         <Switch>
-          <Route path="/">
+          <Route exact path="/">
+            <IndexItems />
+          </Route>
+          <Route path="/items/:id">
             <ShowItem formToken={props.formToken} />
           </Route>
         </Switch>
@@ -26,12 +29,10 @@ const App = props => {
 }
 
 App.defaultProps = {
-  items: [ { id: 1, name: 'Java' } ],
   formToken: ''
 }
 
 App.propTypes = {
-  items: PropTypes.array,
   formToken: PropTypes.string
 }
 
