@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :items, only: [:index, :show]
-      resources :stages, only: [:index]
-      resources :item_stages, only: [:create]
+      resources :categories, only: [:index]
+      resources :item_categories, only: [:create]
     end
   end
 

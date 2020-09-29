@@ -23,13 +23,13 @@ default: &default
 
 development:
   <<: *default
-  database: sassess_development
+  database: this_or_that_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: sassess
+  #username: this_or_that
 
   # The password associated with the postgres role (username).
   #password:
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: sassess_test
+  database: this_or_that_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: sassess_production
-  username: sassess
-  password: <%= ENV['SASSESS_DATABASE_PASSWORD'] %>
+  database: this_or_that_production
+  username: this_or_that
+  password: <%= ENV['THIS_OR_THAT_DATABASE_PASSWORD'] %>

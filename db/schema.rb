@@ -15,13 +15,19 @@ ActiveRecord::Schema.define(version: 2020_09_29_094909) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "item_stages", force: :cascade do |t|
-    t.bigint "item_id", null: false
-    t.bigint "stage_id", null: false
+  create_table "categories", force: :cascade do |t|
+    t.string "text"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["item_id"], name: "index_item_stages_on_item_id"
-    t.index ["stage_id"], name: "index_item_stages_on_stage_id"
+  end
+
+  create_table "item_categories", force: :cascade do |t|
+    t.bigint "item_id", null: false
+    t.bigint "category_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_item_categories_on_category_id"
+    t.index ["item_id"], name: "index_item_categories_on_item_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -30,12 +36,6 @@ ActiveRecord::Schema.define(version: 2020_09_29_094909) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "stages", force: :cascade do |t|
-    t.string "text"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  add_foreign_key "item_stages", "items"
-  add_foreign_key "item_stages", "stages"
+  add_foreign_key "item_categories", "categories"
+  add_foreign_key "item_categories", "items"
 end

@@ -4,9 +4,9 @@ import PropTypes from 'prop-types'
 import { ItemTypes } from './Constants'
 import { useDrop } from 'react-dnd'
 
-const Stage = props => {
+const Category = props => {
   const update = (item) => {
-    const body = JSON.stringify({ item_stage: { item_id: item.id, stage_id: props.id } })
+    const body = JSON.stringify({ item_category: { item_id: item.id, category_id: props.id } })
 
     fetch(`${props.apiUrl}`, {
         method: 'POST',
@@ -16,8 +16,8 @@ const Stage = props => {
         },
         body: body,
       }).then((response) => { return response.json() })
-        .then((itemStage)=>{
-          console.log(itemStage)
+        .then((itemCategory)=>{
+          console.log(itemCategory)
         })
   }
 
@@ -30,24 +30,24 @@ const Stage = props => {
   })
 
   return(
-    <div className="Stage" ref={drop}>
+    <div className="Category" ref={drop}>
       { props.text }
     </div>
   )
 }
 
-Stage.defaultProps = {
+Category.defaultProps = {
   id: 1,
-  text: "Remember",
-  apiUrl: 'http://localhost:3000/api/v1/item_stages',
+  text: "This",
+  apiUrl: 'http://localhost:3000/api/v1/item_categories',
   formtoken: ''
 }
 
-Stage.propTypes = {
+Category.propTypes = {
   id: PropTypes.number.isRequired,
   text: PropTypes.string,
   apiUrl: PropTypes.string,
   formToken: PropTypes.string
 }
 
-export default Stage
+export default Category

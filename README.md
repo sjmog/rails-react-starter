@@ -1,6 +1,6 @@
-# Sassess
+# ThisOrThat
 
-Self-assessment tool using Bloom's taxonomy.
+Quick allocation tool to train pattern-matching and a knowledge graph.
 
 ### Getting Started
 

@@ -2,6 +2,6 @@
   Item.create(text: item)
 end
 
-["Remember", "Explain", "Apply", "Analyse", "Evaluate", "Create"].each do |stage|
-  Stage.create(text: stage)
+["This", "That"].each do |category|
+  Category.create(text: category)
 end
