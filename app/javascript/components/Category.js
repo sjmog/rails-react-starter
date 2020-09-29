@@ -16,21 +16,21 @@ const Category = props => {
         },
         body: body,
       }).then((response) => { return response.json() })
-        .then((itemCategory)=>{
-          console.log(itemCategory)
+        .then((itemCategory) => {
+          props.onUpdate(itemCategory)
         })
   }
 
-  const [{ isOver }, drop] = useDrop({
+  const [{ opacity }, dropRef] = useDrop({
     accept: ItemTypes.CARD,
     drop: (item) => update(item),
     collect: monitor => ({
-      isOver: !!monitor.isOver(),
+      opacity: !!monitor.isOver() ? 0.5 : 1
     })
   })
 
   return(
-    <div className="Category" ref={drop}>
+    <div className="Category" ref={dropRef} style={{ opacity }}>
       { props.text }
     </div>
   )

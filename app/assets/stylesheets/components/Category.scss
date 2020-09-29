@@ -1,4 +1,9 @@
 .Category {
-  display: block;
-  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 16rem;
+  width: 16rem;
+  border: 1px solid #afafaf;
+  border-radius: 100%;
 }

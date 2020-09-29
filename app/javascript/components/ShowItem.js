@@ -16,16 +16,23 @@ const ShowItem = props => {
   const [ item, setItem ] = useState(NULL_ITEM)
   const { id } = useParams();
 
-  useEffect(() => {
-    fetch(`${props.apiUrl}/${id}`)
+  const fetchNewItem = (_itemCategory) => {
+    // there are 4 items right now
+    const itemIds = [1, 2, 3, 4].filter(id => id !== item.id)
+
+    fetch(`${props.apiUrl}/${itemIds[Math.floor(Math.random() * itemIds.length)]}`)
       .then(res => res.json())
       .then(setItem)
+  }
+
+  useEffect(() => {
+    fetchNewItem()
   }, [])
 
   return (
     <DndProvider backend={HTML5Backend}>
       <div className="ShowItem">
-        <Taxonomy formToken={props.formToken} />
+        <Taxonomy formToken={props.formToken} onUpdateItemCategory={fetchNewItem} />
         <ItemList items={[item]} />
       </div>
     </DndProvider>

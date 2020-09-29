@@ -2,6 +2,6 @@
   Item.create(text: item)
 end
 
-["This", "That"].each do |category|
+["Language", "Framework"].each do |category|
   Category.create(text: category)
 end

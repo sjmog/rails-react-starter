@@ -14,7 +14,10 @@ const Taxonomy = props => {
 
   return(
     <div className="Taxonomy">
-      { categories.map(category => <Category key={category.id} formToken={props.formToken} {...category} />) }
+      { categories.map(category => <Category key={category.id}
+                                             formToken={props.formToken}
+                                             onUpdate={props.onUpdateItemCategory}
+                                             {...category} />) }
     </div>
   )
 }
