@@ -13,7 +13,7 @@ const Taxonomy = props => {
   }, [])
 
   return(
-    <div>
+    <div className="Taxonomy">
       { stages.map(stage => <Stage key={stage.id} formToken={props.formToken} {...stage} />) }
     </div>
   )

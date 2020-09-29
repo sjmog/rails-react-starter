@@ -30,7 +30,7 @@ const Stage = props => {
   })
 
   return(
-    <div ref={drop}>
+    <div className="Stage" ref={drop}>
       { props.text }
     </div>
   )

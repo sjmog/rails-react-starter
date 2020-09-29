@@ -2,20 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 
-import Taxonomy from './Taxonomy'
-import ItemList from './ItemList'
-
-import { DndProvider } from 'react-dnd'
-import { HTML5Backend } from 'react-dnd-html5-backend'
+import ShowItem from './ShowItem'
 
 const App = props => {
   return (
-    <DndProvider backend={HTML5Backend}>
-      <div className="App">
-        <Taxonomy formToken={props.formToken} />
-        <ItemList items={props.items} />
-      </div>
-    </DndProvider>
+    <div className="App">
+      <ShowItem formToken={props.formToken} />
+    </div>
   )
 }
 
