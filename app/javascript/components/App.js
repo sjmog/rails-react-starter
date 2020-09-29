@@ -2,13 +2,26 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 import ShowItem from './ShowItem'
 
 const App = props => {
   return (
-    <div className="App">
-      <ShowItem formToken={props.formToken} />
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route path="/">
+            <ShowItem formToken={props.formToken} />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   )
 }
 
