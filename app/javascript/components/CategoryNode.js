@@ -3,18 +3,18 @@ import PropTypes from 'prop-types'
 
 import { Link } from "react-router-dom";
 
-const ItemNode = props => (
+const CategoryNode = props => (
   <Link to={`/items/${ props.id }`}>{ props.text }</Link>
 )
 
-ItemNode.defaultProps = {
+CategoryNode.defaultProps = {
   id: 1,
   text: 'Java'
 }
 
-ItemNode.propTypes = {
+CategoryNode.propTypes = {
   id: PropTypes.number.isRequired,
   text: PropTypes.string
 }
 
-export default ItemNode
+export default CategoryNode

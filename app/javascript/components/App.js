@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 
 import ShowItem from './ShowItem'
-import IndexItems from './IndexItems'
+import IndexCategories from './IndexCategories'
 
 const App = props => {
   return (
@@ -17,7 +17,7 @@ const App = props => {
       <div className="App">
         <Switch>
           <Route exact path="/">
-            <IndexItems />
+            <IndexCategories />
           </Route>
           <Route path="/items/:id">
             <ShowItem formToken={props.formToken} />
