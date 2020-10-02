@@ -29,7 +29,8 @@ Taxonomy.defaultProps = {
 
 Taxonomy.propTypes = {
   formToken: PropTypes.string,
-  apiUrl: PropTypes.string
+  apiUrl: PropTypes.string,
+  onUpdateItemCategory: PropTypes.func
 }
 
 export default Taxonomy

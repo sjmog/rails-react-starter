@@ -3,7 +3,9 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :items, only: [:index, :show]
       resources :categories, only: [:index]
-      resources :item_categories, only: [:create]
+      resources :item_categories, only: [:create, :compare]
+
+      get '/item_categories/compare', controller: 'item_categories', action: 'compare'
     end
   end
 

@@ -32,7 +32,9 @@ const ShowItem = props => {
   return (
     <DndProvider backend={HTML5Backend}>
       <div className="ShowItem">
-        <Taxonomy formToken={props.formToken} onUpdateItemCategory={fetchNewItem} />
+        <Taxonomy 
+          formToken={props.formToken} 
+          onUpdateItemCategory={fetchNewItem} />
         <ItemList items={[item]} />
       </div>
     </DndProvider>
