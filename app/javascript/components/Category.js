@@ -10,14 +10,13 @@ const Category = props => {
   useEffect(() => {
     setTimeout(() => {
       const previousStatus = status;
-      
+
       setStatus(null)
 
       previousStatus && props.onUpdate()
     }, 1000)
   }, [status])
 
-  // set the answer
   const update = (item) => {
     const body = JSON.stringify({ item_category: { item_id: item.id, category_id: props.id } })
 
@@ -30,22 +29,13 @@ const Category = props => {
         body: body,
       }).then((response) => { return response.json() })
         .then((itemCategory) => {
-          console.log(itemCategory)
           props.onUpdate(itemCategory)
-        })
-  }
-
-  const compare = (item) => {
-    fetch(`${props.apiUrl}/compare?item_id=${item.id}&category_id=${props.id}`)
-        .then((response) => response.text())
-        .then((response) => {
-          setStatus(response)
         })
   }
 
   const [{ opacity }, dropRef] = useDrop({
     accept: ItemTypes.CARD,
-    drop: (item) => compare(item),
+    drop: (item) => update(item),
     collect: monitor => ({
       opacity: !!monitor.isOver() ? 0.5 : 1
     })
