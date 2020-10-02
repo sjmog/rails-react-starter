@@ -29,6 +29,7 @@ const Category = props => {
         body: body,
       }).then((response) => { return response.json() })
         .then((itemCategory) => {
+          console.log(itemCategory)
           props.onUpdate(itemCategory)
         })
   }

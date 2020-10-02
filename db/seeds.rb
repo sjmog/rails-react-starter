@@ -5,3 +5,5 @@ end
 ["Language", "Framework"].each do |category|
   Category.create(text: category)
 end
+
+User.create(email: "user@example.com", password: "password")
