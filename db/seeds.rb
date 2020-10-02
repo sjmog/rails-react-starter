@@ -7,3 +7,6 @@ end
 end
 
 User.create(email: "user@example.com", password: "password")
+
+game = Game.create(items: Item.all)
+

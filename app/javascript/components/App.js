@@ -8,8 +8,8 @@ import {
   Route
 } from "react-router-dom";
 
-import ShowItem from './ShowItem'
-import IndexCategories from './IndexCategories'
+import RunGame from './RunGame'
+import Main from './Main'
 
 const App = props => {
   return (
@@ -17,10 +17,10 @@ const App = props => {
       <div className="App">
         <Switch>
           <Route exact path="/">
-            <IndexCategories />
+            <Main />
           </Route>
-          <Route path="/items/:id">
-            <ShowItem formToken={props.formToken} />
+          <Route path="/games/:id">
+            <RunGame formToken={props.formToken} />
           </Route>
         </Switch>
       </div>
