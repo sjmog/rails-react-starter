@@ -1,6 +1,7 @@
 class Api::V1::ItemCategoriesController < ApplicationController
+  before_action :authenticate_user!
+
   def create
-    # Master record the categories
     item_category = ItemCategory.find_or_initialize_by(item_id: item_category_params[:item_id])
 
     item_category.update(item_category_params)

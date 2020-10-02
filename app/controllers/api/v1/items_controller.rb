@@ -1,4 +1,6 @@
 class Api::V1::ItemsController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
     render json: Item.all, status: 200
   end
