@@ -1,3 +1,5 @@
+// The main component that is rendered to the * route
+
 import React from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
@@ -8,8 +10,7 @@ import {
   Route
 } from "react-router-dom";
 
-import RunGame from './RunGame'
-import Main from './Main'
+import Index from './Index'
 
 const App = props => {
   return (
@@ -17,10 +18,9 @@ const App = props => {
       <div className="App">
         <Switch>
           <Route exact path="/">
-            <Main />
+            <Index />
           </Route>
-          <Route path="/games/:id">
-            <RunGame formToken={props.formToken} />
+          <Route path="/models/:id">
           </Route>
         </Switch>
       </div>
