@@ -1,13 +1,6 @@
-# Rails React Starter
+# Rdio
 
-The Base app with:
-
-- Rails
-- PostgreSQL
-- React
-- Devise (for users)
-
-Routing is mostly handled by React-Router (except login/logout). Rails is optimised for API stuff.
+Talk radio for everyone.
 
 ### Getting Started
 
