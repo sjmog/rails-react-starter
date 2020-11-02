@@ -11,6 +11,12 @@ Routing is mostly handled by React-Router (except login/logout). Rails is optimi
 
 ### Getting Started
 
+Change the application name in:
+- config/database.yml
+- config/application.rb
+- config/environments/production.rb
+- app/views/layouts/application.html.erb
+
 - `bundle install`
 - `yarn install`
 - `bin/rails db:create`
