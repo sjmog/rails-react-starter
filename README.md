@@ -16,6 +16,8 @@ Routing is mostly handled by React-Router (except login/logout). Rails is optimi
   - config/application.rb
   - config/environments/production.rb
   - app/views/layouts/application.html.erb
+- Set the new origin remote to a new repo (e.g. `git remote set-url origin https://github.com/sjmog/repo-name`)
+- Update this README with the application name.
 - `bundle install`
 - `yarn install`
 - `bin/rails db:create`
